@@ -64,12 +64,13 @@ export default function AsideFilter() {
         <h2>Bộ lọc tìm kiếm</h2>
       </Link>
       <div className='my-4 h-[1px] bg-gray-300' />
-      <div className='my-5'>
+      <div className=''>
         <div>Khoảng giá</div>
         <form className='mt-2'>
+          <div className='flex'>
           <div className='flex items-start'>
             <input
-              type='text'
+              type='number'
               className='grow p-1 w-full outline-none border border-gray-300 focus:border-gray-500 rounded-sm focus:shadow-sm'
               placeholder='₫ TỪ'
             />
@@ -77,13 +78,14 @@ export default function AsideFilter() {
           <div className='mx-2 mt-2 shrink-0'>-</div>
           <div className='flex items-start'>
             <input
-              type='text'
+              type='number'
               className='grow p-1 w-full outline-none border border-gray-300 focus:border-gray-500 rounded-sm focus:shadow-sm'
               placeholder='₫ ĐẾN'
             />
           </div>
+          </div>
 
-          <Button className='flex w-full items-center justify-center bg-orange p-2 text-sm uppercase text-white hover:bg-orange/80'>
+          <Button className='flex w-full items-center justify-center bg-orange p-2 text-sm uppercase text-white hover:bg-orange/80 mt-3'>
             Áp dụng
           </Button>
         </form>
