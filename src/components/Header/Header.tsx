@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import Popover from '../Popover'
 import NavHeader from '../NavHeader'
 import noproduct from '../../assets/images/no-product.png'
-import NavBar from '../NavBar'
 
 
 export default function Header() {

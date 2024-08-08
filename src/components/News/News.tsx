@@ -68,8 +68,8 @@ export default function News() {
   ]
 
   return (
-    <div className='container'>
-      <p className='font-serif items-center text-center uppercase mb-4 text-3xl mt-4'>Tin tức</p>
+    <div className='container mb-2'>
+      <p className='font-serif items-center text-center uppercase mb-4 text-3xl mt-2 pt-4'>Tin tức</p>
       <div className='my-4 h-[1px] bg-gray-300 mx-auto w-1/2' />
       <div className='relative'>
         <Slider ref={sliderRef} {...settings}>
@@ -77,7 +77,7 @@ export default function News() {
             <div key={index} className='p-2'>
               <div className='bg-white rounded-lg shadow-md overflow-hidden'>
                 <img src={item.image} alt={item.title} className='w-full h-40 object-cover' />
-                <div className='p-4'>
+                <div className='p-4 bg-gray-100'>
                   <h3 className='text-lg font-semibold'>{item.title}</h3>
                   <p className='text-sm text-gray-600'>{item.description}</p>
                 </div>
@@ -85,19 +85,18 @@ export default function News() {
             </div>
           ))}
         </Slider>
-        {/* Custom Navigation Buttons */}
-        <button
-          className='absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full'
+        {/* <button
+          className='absolute top-1/2 left-4 transform -translate-y-1/2 hover:bg-gray-100 hover:text-black text-white p-2 '
           onClick={() => sliderRef.current?.slickPrev()}
         >
           &lt;
         </button>
         <button
-          className='absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full'
+          className='absolute top-1/2 right-4 transform -translate-y-1/2 hover:bg-gray-100 hover:text-black text-white p-2 '
           onClick={() => sliderRef.current?.slickNext()}
         >
           &gt;
-        </button>
+        </button> */}
       </div>
     </div>
   )

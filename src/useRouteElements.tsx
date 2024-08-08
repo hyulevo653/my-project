@@ -3,6 +3,7 @@ import NotFound from './pages/NotFound'
 import ProductList from './pages/ProductList'
 import MainLayout from './layouts/MainLayout'
 import { Suspense } from 'react'
+import Main from './pages/Main'
 
 
 export default function useRouteElements() {
@@ -21,10 +22,18 @@ export default function useRouteElements() {
         path: '',
         element: (
         <MainLayout>
-          <ProductList />
+          <Main/>
         </MainLayout>
         )
-    }
+    },
+    {
+      path: '/all-product',
+      element: (
+      <MainLayout>
+        <ProductList/>
+      </MainLayout>
+      )
+  }
   ])
   return routeElements
 }
