@@ -1,9 +1,13 @@
 import { useState } from "react";
 import AsideFilter from "./component/AsideFilter";
 import Product from "./component/Product";
+import SortProductList from "./component/SortProductList";
+import useQueryConfig from "../../hooks/useQueryConfig";
+import Pagination from "../../components/Pagination";
 
 
 export default function ProductList() {
+  const queryConfig = useQueryConfig()
   const productsPerPage = 20;
   const totalProducts = 50;
   const totalPages = Math.ceil(totalProducts / productsPerPage);
@@ -30,6 +34,7 @@ export default function ProductList() {
             <AsideFilter />
           </div>
           <div className='col-span-9'>
+          <SortProductList queryConfig={queryConfig} pageSize={1} />
             <div className='mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
               {currentProducts.map((_, index) => (
                 <div className='col-span-1' key={index}>
@@ -37,31 +42,7 @@ export default function ProductList() {
                 </div>
               ))}
             </div>
-            <div className='mt-4 flex justify-center'>
-              <button
-                className='px-4 py-2 mx-1 bg-gray-300 rounded'
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-              >
-                Previous
-              </button>
-              {Array.from({ length: totalPages }, (_, index) => (
-                <button
-                  key={index}
-                  className={`px-4 py-2 mx-1 ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </button>
-              ))}
-              <button
-                className='px-4 py-2 mx-1 bg-gray-300 rounded'
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-              >
-                Next
-              </button>
-            </div>
+            <Pagination queryConfig={queryConfig} pageSize={3} />
           </div>
         </div>
       </div>

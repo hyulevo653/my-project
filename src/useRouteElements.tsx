@@ -4,6 +4,7 @@ import ProductList from './pages/ProductList'
 import MainLayout from './layouts/MainLayout'
 import { Suspense } from 'react'
 import Main from './pages/Main'
+import Article from './pages/Article/Article'
 
 
 export default function useRouteElements() {
@@ -26,6 +27,14 @@ export default function useRouteElements() {
         </MainLayout>
         )
     },
+    {
+      path: '/bai-viet',
+      element: (
+      <MainLayout>
+        <Article/>
+      </MainLayout>
+      )
+  },
     {
       path: '/all-product',
       element: (
