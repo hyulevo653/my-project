@@ -1,6 +1,7 @@
 const path = {
     home: '/',
-    cart: '/cart'
+    cart: '/cart',
+    productDetail: ':nameId',
 } as const
 
 export default path
