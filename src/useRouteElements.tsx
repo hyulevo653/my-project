@@ -7,11 +7,13 @@ import Main from './pages/Main'
 import Article from './pages/Article/Article'
 import path from './constants/path'
 import ProductDetails from './pages/ProductDetails'
+import Cart from './pages/Cart/Cart'
+import Checkout from './pages/Checkout'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
     {
-      path: '/notfound',
+      path: '*',
       element: (
         <MainLayout>
           <Suspense>
@@ -49,6 +51,22 @@ export default function useRouteElements() {
       element: (
         <MainLayout>
           <ProductList />
+        </MainLayout>
+      )
+    },
+    {
+      path: '/cart',
+      element: (
+        <MainLayout>
+          <Cart />
+        </MainLayout>
+      )
+    },
+    {
+      path: '/checkout',
+      element: (
+        <MainLayout>
+          <Checkout />
         </MainLayout>
       )
     }

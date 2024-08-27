@@ -5,7 +5,7 @@ import DOMPurify from 'dompurify'
 import Product from '../ProductList/component/Product'
 
 export default function ProductDetails() {
-  const testSanphamtuongtu = Array.from({ length: 5 }, (_, index) => ({
+  const testSanphamtuongtu = Array.from({ length: 6 }, (_, index) => ({
     _id: index
   }))
 
